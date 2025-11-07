@@ -1,6 +1,4 @@
-package main.java.com.nmcclain.CRUDAPIdemo.animal;
-
-import java.lang.annotation.Inherited;
+package com.nmcclain.CRUDAPIdemo.animal;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,6 +7,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "animals")
 public class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,28 +21,26 @@ public class Animal {
   private String description;
 
   @Column(nullable = false)
-  private string animalType;
+  private String animalType;
 
-  private String profilePicturePath;
+
 
   public Animal() {
   }
 
-  public Animal(Long animalId, String name, int age, String description, string animalType, String profilePicturePath) {
-    this.animalId = aniamlId;
+  public Animal(Long animalId, String name, int age, String description, String animalType) {
+    this.animalId = animalId;
     this.name = name;
     this.age = age;
     this.description = description;
     this.animalType = animalType;
-    this.profilePicturePath = profilePicturePath;
   }
 
-  public Student(String name, int age, String description, string animalType, String profilePicturePath) {
+  public Animal(String name, int age, String description, String animalType) {
     this.name = name;
     this.age = age;
     this.description = description;
     this.animalType = animalType;
-    this.profilePicturePath = profilePicturePath;
   }
 
   public Long getAnimalId() {
@@ -50,7 +48,7 @@ public class Animal {
   }
 
   public void setAnimalId(Long id) {
-    this.aniamlId = id;
+    this.animalId = id;
   }
 
   public String getName() {
@@ -85,11 +83,4 @@ public class Animal {
         this.age = age;
     }
 
-  public String getProfilePicturePath() {
-    return profilePicturePath;
-  }
-
-  public void setProfilePicturePath(String profilePicturePath) {
-    this.profilePicturePath = profilePicturePath;
-  }
 }
