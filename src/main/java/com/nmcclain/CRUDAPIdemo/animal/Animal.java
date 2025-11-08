@@ -23,24 +23,26 @@ public class Animal {
   @Column(nullable = false)
   private String animalType;
 
-
+  private String profilePicturePath;
 
   public Animal() {
   }
 
-  public Animal(Long animalId, String name, int age, String description, String animalType) {
+  public Animal(Long animalId, String name, int age, String description, String animalType, String profilePicturePath) {
     this.animalId = animalId;
     this.name = name;
     this.age = age;
     this.description = description;
     this.animalType = animalType;
+    this.profilePicturePath = profilePicturePath;
   }
 
-  public Animal(String name, int age, String description, String animalType) {
+  public Animal(String name, int age, String description, String animalType, String profilePicturePath) {
     this.name = name;
     this.age = age;
     this.description = description;
     this.animalType = animalType;
+    this.profilePicturePath = profilePicturePath;
   }
 
   public Long getAnimalId() {
@@ -82,5 +84,13 @@ public class Animal {
   public void setAge(int age) {
         this.age = age;
     }
+
+    public String getProfilePicturePath() {
+    return profilePicturePath;
+  }
+
+  public void setProfilePicturePath(String profilePicturePath) {
+    this.profilePicturePath = profilePicturePath;
+  }
 
 }
